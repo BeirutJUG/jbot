@@ -24,7 +24,8 @@ import org.springframework.web.util.UriComponentsBuilder;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import beirutjug.jbot.app.model.action.ResponseMessage;
+import beirutjug.jbot.core.slack.models.interactive.ResponseMessage;
+
 
 @RestController
 @Profile("slack")
@@ -67,10 +68,10 @@ public class SlackInteractiveMessageController {
             String correctAnswer = slackBot.currentCorrectAnswerMap.get(message.getUser().getId());
             logger.info("Correct answer :" + correctAnswer);
             if(correctAnswer.equalsIgnoreCase(answer)) {
-                slackWebApiInvoker.postMessage(message.getChannel().id, correct_reactions[random.nextInt(correct_reactions.length)] +
+                slackWebApiInvoker.postMessage(message.getChannel().getId(), correct_reactions[random.nextInt(correct_reactions.length)] +
                         "\nAnother question?", null);
             } else {
-                slackWebApiInvoker.postMessage(message.getChannel().id, "Wrong answer :expressionless:\nAnother question?", null);
+                slackWebApiInvoker.postMessage(message.getChannel().getId(), "Wrong answer :expressionless:\nAnother question?", null);
             }
             return ResponseEntity.ok().body(null);
         } catch (IOException e) {

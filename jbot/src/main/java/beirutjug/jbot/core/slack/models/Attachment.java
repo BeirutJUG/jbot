@@ -7,6 +7,7 @@ import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Attachment {
+    public int id;
     private String fallback;
     private String color;
     private String pretext;
@@ -35,7 +36,15 @@ public class Attachment {
     @JsonProperty("callback_id")
     private String callbackId;
 
-    public String getFallback() {
+    public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getFallback() {
         return fallback;
     }
 

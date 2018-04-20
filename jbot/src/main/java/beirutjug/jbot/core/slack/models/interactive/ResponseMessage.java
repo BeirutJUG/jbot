@@ -1,13 +1,16 @@
 
-package beirutjug.jbot.app.model.action;
+package beirutjug.jbot.core.slack.models.interactive;
 
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
+import beirutjug.jbot.core.slack.models.Action;
+import beirutjug.jbot.core.slack.models.Channel;
+import beirutjug.jbot.core.slack.models.Team;
+import beirutjug.jbot.core.slack.models.User;
 import lombok.Getter;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)

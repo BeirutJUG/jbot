@@ -1,6 +1,11 @@
 # JBot
 
-__This project is based on https://github.com/ramswaroop/jbot and has been modified to support the implementation of the trivia bot on Slack. Controller annotation is renamed to BotController to avoid confusion with Spring annotation. Other JSON model POJOs were added to support responses to interactive messages (i.e. button selection).__
+__This project is based on https://github.com/ramswaroop/jbot and has been modified to support the implementation of the trivia bot on Slack:__
+
+* `Controller` annotation is renamed to `BotController` to avoid confusion with Spring annotation.
+* Other JSON model POJOs were added to support responses to interactive messages (i.e. button selection).
+* Some existing JSON model classes were updated.
+* Added Lombok dependency.
 
 See https://api.slack.com/ for lots of documentation about Slack app/bot integration.
 

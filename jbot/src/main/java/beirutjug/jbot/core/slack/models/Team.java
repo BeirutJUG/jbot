@@ -1,21 +1,17 @@
-package beirutjug.jbot.app.model.action;
+
+package beirutjug.jbot.core.slack.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Getter;
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Getter
-public class Action {
+public class Team {
 
-    @JsonProperty("name")
-    public String name;
-    @JsonProperty("type")
-    public String type;
-    @JsonProperty("value")
-    public String value;
+    @JsonProperty("id")
+    public String id;
+    @JsonProperty("domain")
+    public String domain;
 
 }
