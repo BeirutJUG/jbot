@@ -80,20 +80,4 @@ public class SlackInteractiveMessageController {
         }
     }
 
-    @RequestMapping(value = "/oauth", method = RequestMethod.GET)
-    public ResponseEntity<Object> auth(@RequestParam String code) {
-        if(code == null || code.isEmpty()) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-        
-        RestTemplate restTemplate = new RestTemplate();
-        
-        UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://slack.com/api/oauth.access")
-                .queryParam("code", code)
-                .queryParam("client_id", "349468032099.349345822916")
-                .queryParam("client_secret", "299a36aae3ff5f1027353fcb69c89c82");
-
-        ResponseEntity<Object> response = restTemplate.getForEntity(builder.toUriString(), Object.class);
-        return response;
-    }
 }
